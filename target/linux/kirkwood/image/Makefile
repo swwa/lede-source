@@ -152,4 +152,12 @@ define Device/zyxel_nsa325
 endef
 TARGET_DEVICES += zyxel_nsa325
 
+define Device/ds109
+  DEVICE_TITLE := Synology DS109
+  DEVICE_DTS := kirkwood-ds109
+  FILESYSTEMS := squashfs
+  DEVICE_PACKAGES := kmod-gpio-button-hotplug kmod-hwmon-lm85
+endef
+TARGET_DEVICES += ds109
+
 $(eval $(call BuildImage))

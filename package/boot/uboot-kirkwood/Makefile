@@ -79,6 +79,10 @@ define U-Boot/pogoplugv4
   BUILD_DEVICES:=cloudengines_pogoplugv4
 endef
 
+define U-Boot/ds109
+  NAME:=Synology DS109
+endef
+
 UBOOT_TARGETS := \
 	dockstar dockstar_second_stage \
 	goflexhome \
@@ -86,6 +90,7 @@ UBOOT_TARGETS := \
 	iconnect iconnect_second_stage \
 	nsa310 \
 	nsa325 \
+        ds109 \
 	pogo_e02 pogo_e02_second_stage \
 	pogoplugv4
 
