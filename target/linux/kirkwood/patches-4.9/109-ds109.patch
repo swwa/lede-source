@@ -38,7 +38,7 @@
  {
  	struct device_node *np = pdev->dev.of_node;
 @@ -115,6 +138,8 @@ static int qnap_power_off_probe(struct p
- 		 >return -EBUSY;
+ 		 return -EBUSY;
  	}
  	pm_power_off = qnap_power_off;
 +	if (cfg->baud == 9600)
