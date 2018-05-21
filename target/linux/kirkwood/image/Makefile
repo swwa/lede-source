@@ -152,11 +152,12 @@ define Device/zyxel_nsa325
 endef
 TARGET_DEVICES += zyxel_nsa325
 
-define Device/ds109
+define Device/synology_ds109
   DEVICE_TITLE := Synology DS109
   DEVICE_DTS := kirkwood-ds109
   DEVICE_PACKAGES := kmod-hwmon-gpiofan kmod-rtc-rs5c372a kmod-i2c-mv64xxx
+  BOARD_NAME := ds109
 endef
-TARGET_DEVICES += ds109
+TARGET_DEVICES += synology_ds109
 
 $(eval $(call BuildImage))
