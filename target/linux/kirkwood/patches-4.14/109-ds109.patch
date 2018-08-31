@@ -38,7 +38,7 @@
  {
  	struct device_node *np = pdev->dev.of_node;
 @@ -115,6 +138,8 @@ static int qnap_power_off_probe(struct p
- 		 return -EBUSY;
+ 		return -EBUSY;
  	}
  	pm_power_off = qnap_power_off;
 +	if (cfg->baud == 9600)
@@ -48,7 +48,19 @@
  }
 --- a/arch/arm/boot/dts/kirkwood-synology.dtsi
 +++ b/arch/arm/boot/dts/kirkwood-synology.dtsi
-@@ -246,7 +246,7 @@
+@@ -237,6 +237,11 @@
+ 					reg = <0x003f0000 0x00010000>;
+ 					label = "FIS directory";
+ 				};
++
++ 				partition@all {
++					reg = <0x00000000 0x00400000>;
++					label = "All";
++				};
+ 			};
+ 		};
+ 
+@@ -246,7 +251,7 @@
  
  			rs5c372: rs5c372@32 {
  				status = "disabled";
